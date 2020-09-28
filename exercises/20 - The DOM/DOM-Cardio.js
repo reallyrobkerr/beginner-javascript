@@ -52,8 +52,8 @@ myDiv.appendChild(myImg);
 
 const twoP = `
     <div>
-        <p>this is a pair of graphs 📈</p>
-        <p>this is a pair of graphs 📈</p>
+        <p>this is the first in a pair of graphs 📈</p>
+        <p>this is the second in a pair of graphs 📈</p>
     </div>`;
 
 const thing = document.createElement('div');
@@ -62,10 +62,26 @@ thing.innerHTML = twoP;
 myList.insertAdjacentElement('beforebegin', thing);
 
 // add a class to the second paragraph called warning
+const thePees = document.querySelectorAll('p');
+thePees[1].classList.add('warning');
 
 // remove the first paragraph
+thePees[0].remove();
 
 // create a function called generatePlayerCard that takes in three arguments: name, age, and height
+function generatePlayerCard(name, age, height) {
+
+  const player = document.createElement('p');
+  player.innerHTML = `
+    <div class="playerCard">
+      <h2>${name} — ${age}</h2>
+      <p>They are ${height} and ${age} years old. In Dog years this person would be ${age * 7}. That would be a tall dog!</p>
+    </div>
+  `;
+  myDiv.append(player);
+}
+
+generatePlayerCard('squishy', 8.5, '100cm');
 
 // have that function return html that looks like this:
 // <div class="playerCard">
