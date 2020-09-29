@@ -71,14 +71,14 @@ thePees[0].remove();
 // create a function called generatePlayerCard that takes in three arguments: name, age, and height
 function generatePlayerCard(name, age, height) {
 
-  const player = document.createElement('p');
-  player.innerHTML = `
-    <div class="playerCard">
-      <h2>${name} — ${age}</h2>
-      <p>They are ${height} and ${age} years old. In Dog years this person would be ${age * 7}. That would be a tall dog!</p>
-    </div>
+  const playerCard = document.createElement('div');
+  playerCard.classList.add('playerCard');
+  playerCard.innerHTML = `
+    <h2>${name} — ${age}</h2>
+    <p>They are ${height} and ${age} years old. In Dog years this person would be ${age * 7}. That would be a tall dog!</p>
+    <button type='button' class='duleet'>d-leet ${name}</button>
   `;
-  myDiv.append(player);
+  myDiv.insertAdjacentElement('beforebegin', playerCard);
 }
 
 generatePlayerCard('squishy', 8.5, '100cm');
@@ -90,14 +90,28 @@ generatePlayerCard('squishy', 8.5, '100cm');
 // </div>
 
 // make a new div with a class of cards
+const cards = document.createElement('div');
+cards.classList.add('cards');
 
 // Have that function make 4 cards
+generatePlayerCard('dick trickle', 70, '180cm');
+generatePlayerCard('trick dickle', 42, '165cm');
+generatePlayerCard('prick chickle', 23, '205cm');
+generatePlayerCard('chick prickle', 33, '187cm');
 
-// append those cards to the div
-// put the div into the DOM just before the wrapper element
-// Bonus, put a delete Button on each card so when you click it, the whole card is removed
+
+// append those cards to the div ✅
+// put the div into the DOM just before the wrapper element ✅
+// Bonus, put a delete Button on each card ✅
+// when you click it, the whole card is removed 
 
 // select all the buttons!
+const buttons = document.querySelectorAll('.duleet');
 // make out delete function
-// loop over them and attach a listener
+function gnar(evt) {
+  const clecked = evt.currentTarget;
 
+  clecked.closest('.playerCard').remove();
+}
+// loop over them and attach a listener
+buttons.forEach(button => button.addEventListener('click', gnar));

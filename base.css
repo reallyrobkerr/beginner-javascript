@@ -71,6 +71,7 @@ a.button, button, input[type="button"] {
   padding: 1rem;
   border: 0;
   border: 2px solid transparent;
+  border-radius: 3px;
   text-decoration: none;
   font-weight: 600;
   font-size:2rem;
