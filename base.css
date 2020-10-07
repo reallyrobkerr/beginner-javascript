@@ -119,8 +119,21 @@ h6 {
 
 .rapper {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 150px 150px 150px;
   grid-template-rows: 80px 80px 80px 80px;
   column-gap: 8px;
   row-gap: 8px;
+}
+
+.frame {
+  display: grid;
+  border-radius: 3px;
+  grid-column: 2 / span 2;
+  grid-row: 2 / span 2;
+  /* object-fit: cover; */
+  overflow: hidden;
+}
+
+.photo {
+  place-self: center stretch;
 }

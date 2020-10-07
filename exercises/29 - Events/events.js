@@ -23,3 +23,18 @@ const buys = document.querySelectorAll('.buy');
 buys.forEach(thing => {
   thing.addEventListener('click', handleCleck)
 });
+
+window.addEventListener(
+  'click',
+  function(elephant) {
+    console.log('cleck\'d tha winda')
+  },
+  { capture: true }
+);
+
+const pic1 = document.querySelector('.photo');
+
+pic1.addEventListener('mouseenter', function(elephant) {
+  console.count(elephant.currentTarget);
+  console.log(this);
+});
