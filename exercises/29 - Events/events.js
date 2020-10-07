@@ -17,3 +17,9 @@ butts.addEventListener('click', handleCleck);
 // you CANNOT use an anonymous callback function with removeEventListener
 
 buttz.addEventListener('click', arrowFunctionExample);
+
+const buys = document.querySelectorAll('.buy');
+
+buys.forEach(thing => {
+  thing.addEventListener('click', handleCleck)
+});
